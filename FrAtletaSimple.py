@@ -99,29 +99,19 @@ class carrera(wx.Frame):
                 coincide=True
             if c==245:
                 coincide=True
-        A=a
-        B=b
-        C=c
-        while A!=0 and B!=0 and C!=0:
-            self.lineA.SetSize(wx.Size(a-A,10))
-            self.lineB.SetSize(wx.Size(b-B,10))
-            self.lineC.SetSize(wx.Size(c-C,10))
-            i=i+1
-            A=A-1
-            B=B-1
-            C=C-1
-            self.stGanador.SetLabel("Intervalo: ",i+1 )
-            sleep(0.5)
-        if self.lineA.GetSize()==(a,10):
-            if self.lineA.GetSize():
-                if self.lineB.GetSize():
-                    if self.lineC.GetSize():                      
-                            if (a>b and a>c):
-                                self.stGanador.SetLabel("El ganador es: A" )
-                
-                            if (b>c and b>a):
-                                self.stGanador.SetLabel("El ganador es: B" )
+        self.lineA.SetSize(wx.Size(a,10))
+        self.lineB.SetSize(wx.Size(b,10))
+        self.lineC.SetSize(wx.Size(c,10))
+
+        if self.lineA.GetSize():
+            if self.lineB.GetSize():
+                if self.lineC.GetSize():                      
+                    if (a>b and a>c):
+                        self.stGanador.SetLabel("El ganador es: A" )
                     
-                            if (c>b and c>a):
-                                self.stGanador.SetLabel("El ganador es: C" )
+                    if (b>c and b>a):
+                        self.stGanador.SetLabel("El ganador es: B" )
+                    
+                    if (c>b and c>a):
+                        self.stGanador.SetLabel("El ganador es: C" )
         event.Skip()
